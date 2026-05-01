@@ -24,7 +24,7 @@ CONFIG = {
     "ollama_url": "http://localhost:11434/api/generate",
     "ollama_model": "tinyllama",
 
-    "openai_url": "https://api.openai.com/v1/chat/completions",
+"openai_url": "https://api.groq.com/openai/v1/chat/completions",    
     "openai_api_key": os.getenv("OPENAI_API_KEY"), 
     "openai_model": "llama3-8b-8192",
 
