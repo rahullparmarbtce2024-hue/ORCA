@@ -26,7 +26,7 @@ CONFIG = {
 
     "openai_url": "https://api.openai.com/v1/chat/completions",
     "openai_api_key": os.getenv("OPENAI_API_KEY"), 
-    "openai_model": "gpt-3.5-turbo",
+    "openai_model": "llama3-b-8192",
 
     "max_history": 20,
     "timeout": 60,
