@@ -3,6 +3,7 @@ Orca AI - ChatGPT-like web application
 Supports local Ollama models and OpenAI-compatible external APIs
 """
 
+import os
 import json
 import uuid
 import time
@@ -16,16 +17,20 @@ app.secret_key = "orca-secret-key-change-in-production"
 # ─── Configuration ────────────────────────────────────────────────────────────
 
 CONFIG = {
-    "provider": "ollama",           # "ollama" or "openai"
+    "provider": "openai",   
+    
+    # Ollama (keep but unused in cloud)
     "ollama_url": "http://localhost:11434/api/generate",
-    "ollama_model": "tinyllama",    # Change to llama3, mistral, etc.
+    "ollama_model": "tinyllama",
+
+    # OpenAI
     "openai_url": "https://api.openai.com/v1/chat/completions",
-    "openai_api_key": "",           # Set your key here or via env var
-    "openai_model": "gpt-3.5-turbo",
-    "max_history": 20,              # Max messages per session to save memory
+    "openai_api_key": os.getenv("OPENAI_API_KEY"),  
+    "openai_model": "gpt-4o-mini", 
+
+    "max_history": 20,
     "timeout": 60,
 }
-
 # In-memory storage for chat sessions (use Redis/DB in production)
 chat_sessions = {}
 
