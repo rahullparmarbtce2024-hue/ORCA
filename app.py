@@ -16,16 +16,16 @@ app.secret_key = "orca-secret-key-change-in-production"
 
 # ─── Configuration ────────────────────────────────────────────────────────────
 
+import os
+
 CONFIG = {
-    "provider": "openai",   
-    
-    # Ollama (keep but unused in cloud)
+    "provider": "openai", 
+
     "ollama_url": "http://localhost:11434/api/generate",
     "ollama_model": "tinyllama",
 
-    # OpenAI
     "openai_url": "https://api.openai.com/v1/chat/completions",
-    "openai_api_key": os.getenv("OPENAI_API_KEY"),  
+    "openai_api_key": os.getenv("OPENAI_API_KEY"), 
     "openai_model": "gpt-3.5-turbo",
 
     "max_history": 20,
