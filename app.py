@@ -26,7 +26,7 @@ CONFIG = {
     # OpenAI
     "openai_url": "https://api.openai.com/v1/chat/completions",
     "openai_api_key": os.getenv("OPENAI_API_KEY"),  
-    "openai_model": "gpt-4o-mini", 
+    "openai_model": "gpt-3.5-turbo",
 
     "max_history": 20,
     "timeout": 60,
