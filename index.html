@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Orca AI</title>
+  <link rel="stylesheet" href="/static/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════════════════
+       SIDEBAR
+  ═══════════════════════════════════════════════════════ -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <div class="logo">
+        <span class="logo-icon">🐋</span>
+        <span class="logo-text">Orca</span>
+      </div>
+      <button class="btn-new-chat" id="newChatBtn" title="New Chat">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 5v14M5 12h14"/>
+        </svg>
+        New Chat
+      </button>
+    </div>
+
+    <div class="sidebar-section-label">Recent</div>
+    <nav class="chat-list" id="chatList">
+      <!-- Chat history injected by JS -->
+    </nav>
+
+    <div class="sidebar-footer">
+      <div class="model-badge" id="modelBadge">
+        <span class="model-dot"></span>
+        <span id="modelName">Loading...</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Mobile overlay -->
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <!-- ═══════════════════════════════════════════════════════
+       MAIN AREA
+  ═══════════════════════════════════════════════════════ -->
+  <main class="main">
+
+    <!-- Top bar (mobile) -->
+    <header class="topbar">
+      <button class="btn-menu" id="menuBtn" aria-label="Toggle sidebar">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M3 12h18M3 6h18M3 18h18"/>
+        </svg>
+      </button>
+      <span class="topbar-title">Orca AI</span>
+      <button class="btn-new-chat-mobile" id="newChatMobile" title="New Chat">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 5v14M5 12h14"/>
+        </svg>
+      </button>
+    </header>
+
+    <!-- Chat messages -->
+    <div class="chat-window" id="chatWindow">
+      <!-- Welcome screen shown when no messages -->
+      <div class="welcome" id="welcome">
+        <div class="welcome-icon">🐋</div>
+        <h1 class="welcome-title">Orca AI</h1>
+        <p class="welcome-subtitle">A fast, private chat powered by local or cloud AI.</p>
+        <div class="welcome-suggestions">
+          <button class="suggestion-chip" data-text="Explain recursion like I'm 10 years old">Explain recursion simply</button>
+          <button class="suggestion-chip" data-text="Write a Python function to reverse a linked list">Reverse a linked list</button>
+          <button class="suggestion-chip" data-text="What are the best practices for REST API design?">REST API best practices</button>
+          <button class="suggestion-chip" data-text="Help me write a professional email to my manager">Write a professional email</button>
+        </div>
+      </div>
+
+      <!-- Messages injected here -->
+      <div class="messages" id="messages"></div>
+    </div>
+
+    <!-- Input area -->
+    <div class="input-area">
+      <div class="input-wrapper">
+        <textarea
+          id="userInput"
+          class="chat-input"
+          placeholder="Message Orca..."
+          rows="1"
+          maxlength="4000"
+        ></textarea>
+        <button class="btn-send" id="sendBtn" disabled aria-label="Send message">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M12 19V5M5 12l7-7 7 7"/>
+          </svg>
+        </button>
+      </div>
+      <p class="input-hint">Orca can make mistakes. Verify important information.</p>
+    </div>
+
+  </main>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>
